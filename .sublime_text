@@ -1,0 +1,117 @@
+// Default: User Settings
+{
+    "bold_folder_labels": true,
+    "color_scheme": "Packages/Color Scheme - Default/Sixteen.sublime-color-scheme",
+    "detect_indentation": false,
+    "font_size": 10,
+    "ignored_packages":
+    [
+        "Vintage"
+    ],
+    "scroll_past_end": false,
+    "scroll_speed": 2.0,
+    "show_definitions": false,
+    "show_encoding": true,
+    "show_errors_inline": false,
+    "show_full_path": false,
+    "theme": "Adaptive.sublime-theme",
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true,
+    "line_numbers": false,
+    "margin": 1
+}
+
+// Default: Key Bindings
+[
+    { "keys": ["ctrl+pagedown"], "command": "next_view_in_stack" },
+    { "keys": ["ctrl+pageup"], "command": "prev_view_in_stack" },
+
+    { "keys": ["ctrl+tab"], "command": "next_view" },
+    { "keys": ["ctrl+shift+tab"], "command": "prev_view" },
+    { "keys": ["ctrl+`"],"command": "terminus_open", "args":
+        {
+            "config_name": "Default",
+            "cwd": "${file_path:${folder}}",
+            "post_window_hooks": [
+                ["carry_file_to_pane", {"direction": "left"}]
+            ]
+        }
+    },
+    { "keys": ["ctrl+w"],"command": "terminus_close", "context":
+        [{"key": "terminus_view"}]
+    },
+    { "keys": ["ctrl+alt+l"], "command": "toggle_setting", "args":
+        {
+            "setting": "line_numbers"
+        }
+
+    },
+    { "keys": ["f11"], "command": "toggle_distraction_free" }
+]
+
+// Terminus: User Settings
+{
+    "shell_configs": [
+        {
+            "name": "Command Prompt",
+            "cmd": "cmd.exe",
+            "env": {},
+            "enable": true,
+            "default": true,
+            "platforms": ["windows"]
+        },
+        {
+            "name": "Power Shell",
+            "cmd": "powershell.exe",
+            "env": {},
+            "enable": true,
+            "default": false,
+            "platforms": ["windows"]
+        },
+        {
+            "name": "WSL Login Shell",
+            "cmd": "wsl.exe",
+            "env": {},
+            "enable": true,
+            "default": false,
+            "platforms": ["windows"]
+        }
+    ],
+    "scrollback_history_size": 1000,
+    "preserve_keys" : [
+        "ctrl+k",   // there are a number of shortcuts with "ctrl+k" prefix.
+        "ctrl+p"   // to show Go to Anything
+    ],
+    "theme": "user",
+    "user_theme_colors":{
+        "background": "#FFFFFF",
+        "foreground": "#000000",
+        "selection": "#C0C0C0",
+        "selection_foreground": "#000000"
+    }
+
+}
+
+// Anaconda: User Settings
+{
+    "auto_formatting": true,
+    "autoformat_ignore":
+    [
+        "E309",
+        "E501",
+        "E702",
+        "E703"
+    ],
+    "pep8_ignore":
+    [
+        "E309",
+        "E501"
+    ],
+    "anaconda_linter_underlines": false,
+    "anaconda_linter_mark_style": "none",
+    "display_signatures": false,
+    "disable_anaconda_completion": false,
+    "swallow_startup_errors": true
+}
+
+
