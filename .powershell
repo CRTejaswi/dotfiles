@@ -1,0 +1,48 @@
+
+
+# Uninstall Built-In Apps
+Get-AppxPackage *3dbuilder* | Remove-AppxPackage
+Get-AppxPackage *getstarted* | Remove-AppxPackage
+Get-AppxPackage *windowsalarms* | Remove-AppxPackage
+Get-AppxPackage *windowscalculator* | Remove-AppxPackage
+Get-AppxPackage *windowscommunicationapps* | Remove-AppxPackage
+Get-AppxPackage *windowsmaps* | Remove-AppxPackage
+Get-AppxPackage *windowsphone* | Remove-AppxPackage
+Get-AppxPackage *windowsstore* | Remove-AppxPackage
+Get-AppxPackage *zunemusic* | Remove-AppxPackage
+Get-AppxPackage *zunevideo* | Remove-AppxPackage
+Get-AppxPackage *bingfinance* | Remove-AppxPackage
+Get-AppxPackage *bingnews* | Remove-AppxPackage
+Get-AppxPackage *bingweather* | Remove-AppxPackage
+Get-AppxPackage *bingsports* | Remove-AppxPackage
+Get-AppxPackage *photos* | Remove-AppxPackage
+Get-AppxPackage *soundrecorder* | Remove-AppxPackage
+Get-AppxPackage *xboxapp* | Remove-AppxPackage
+
+
+# Install Common Software Binaries
+$vlc_url         = "https://mirror.downloadvn.com/videolan/vlc/last/win32/"
+$vlc             = "$vlc_url$((iwr $vlc_url).links.href -match '\.exe$')"
+$firefox         = "https://download.mozilla.org/?product=firefox-latest&os=win64&lang=en-US"
+$sublime_url     = "https://www.sublimetext.com/3"
+$sublime         = $((iwr $sublime_url).links.href -match 'x64 Setup.exe$')
+$python_url      = "https://www.python.org/downloads/windows/"
+$python          = "$(((iwr $python_url).links.href -match '-amd64.exe$')[0])"
+$ffmpeg          = "https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-latest-win64-static.zip"
+$imagemagick_url = "https://imagemagick.org/download/binaries"
+$imagemagick     = "$imagemagick_url/$(((iwr $imagemagick_url).links.href -match 'HDRI-x64-dll.exe$')[-1])"
+# $pandoc_url      = 'https://github.com/jgm/pandoc/releases/latest'
+# $pandoc          = $((iwr $pandoc_url).links.href -match 'x86_64.msi$')
+$miktex_url      = "https://miktex.org"
+$miktex          = "$miktex_url$(((iwr "$miktex_url/download").links.href -match 'x64.exe$')[0])"
+$anydesk         = "https://download.anydesk.com/AnyDesk.exe"
+
+iwr $vlc -OutFile 'vlc.exe'
+iwr $firefox -OutFile 'firefox.exe'
+iwr $sublime -OutFile 'sublimetext.exe'
+iwr $python -OutFile 'python3.exe'
+iwr $ffmpeg -OutFile 'ffmpeg.zip'
+iwr $imagemagick -OutFile 'imagemagick.exe'
+# iwr $pandoc -OutFile 'pandoc.exe'
+iwr $miktex -OutFile 'miktex.exe'
+iwr $anydesk -OutFile 'anydesk.exe'

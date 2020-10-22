@@ -1,12 +1,17 @@
 /*
 Windows Terminal: https://aka.ms/terminal-documentation
+  - Schema:           https://aka.ms/terminal-profiles-schema
+  - Global Settings:  https://aka.ms/terminal-global-settings
+  - Profile Settings: https://aka.ms/terminal-profile-settings
+  - Color Schemes:    https://aka.ms/terminal-color-schemes
+  - Key Bindings:     https://aka.ms/terminal-keybindings
 */
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
 
     /*
-    Global Settings: https://aka.ms/terminal-global-settings
+    Global Settings:
       - Startup
       - Text Selection (Copy/Paste)
     */
@@ -31,7 +36,7 @@ Windows Terminal: https://aka.ms/terminal-documentation
     // Each one of them will appear in the 'New Tab' dropdown,
     //   and can be invoked from the commandline with `wt.exe -p xxx`
     /*
-    Profiles: https://aka.ms/terminal-profile-settings
+    Profile Settings:
       - 
       - 
     */
@@ -80,13 +85,12 @@ Windows Terminal: https://aka.ms/terminal-documentation
         ]
     },
 
-    // Add custom color schemes to this array.
-    // To learn more about color schemes, visit https://aka.ms/terminal-color-schemes
+    // Color Schemes:
     "schemes": [],
 
     // Add custom actions and keybindings to this array.
     // To unbind a key combination from your defaults.json, set the command to "unbound".
-    // To learn more about actions and keybindings, visit https://aka.ms/terminal-keybindings
+    // Key Bindings:
     "actions":
     [
         // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
