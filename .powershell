@@ -1,5 +1,3 @@
-
-
 # Uninstall Built-In Apps
 Get-AppxPackage *3dbuilder* | Remove-AppxPackage
 Get-AppxPackage *getstarted* | Remove-AppxPackage
@@ -19,6 +17,12 @@ Get-AppxPackage *photos* | Remove-AppxPackage
 Get-AppxPackage *soundrecorder* | Remove-AppxPackage
 Get-AppxPackage *xboxapp* | Remove-AppxPackage
 
+# Install PSGallery Modules
+Install-Module PSCalendar
+Install-Module BurntToast
+Install-Module ConsoleGuiTools
+Install-Module 
+Install-Module 
 
 # Install Common Software Binaries
 $vlc_url         = "https://mirror.downloadvn.com/videolan/vlc/last/win32/"
@@ -46,3 +50,26 @@ iwr $imagemagick -OutFile 'imagemagick.exe'
 # iwr $pandoc -OutFile 'pandoc.exe'
 iwr $miktex -OutFile 'miktex.exe'
 iwr $anydesk -OutFile 'anydesk.exe'
+
+
+<# Python: Install Packages
+- SciPy Stack: numpy, scipy, matplotlib, pandas, ipython, jupyter, sympy, scikit-learn
+- TensorFlow: tensorflow
+- 
+#>
+
+python -m pip install numpy scipy matplotlib ipython jupyter pandas sympy nose scikit-learn
+python -m pip install tensorflow
+
+<# Python: Configure Packages
+- jupyter:
+Configure jupyter notebooks to work with Python3, Powershell (Windows/Core), matlab/octave, 
+
+
+#>
+
+python -m pip install powershell_kernel
+python -m powershell_kernel.install
+python -m powershell_kernel.install --powershell-command pwsh
+python -m pip install matlab_kernel
+python -m pip install octave_kernel
