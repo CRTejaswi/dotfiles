@@ -255,24 +255,32 @@ include "C:/Users/Chaitanya Tejaswi/nanorc/*.nanorc"
 ## If you would like nano to have keybindings that are more "usual",
 ## such as ^O for Open, ^F for Find, ^H for Help, and ^Q for Quit,
 ## then uncomment these:
-# Help, Find/Replace, Comment/Uncomment, Up/Down, Execute (from Shell)
+
+# Help, Comment/Uncomment, Up/Down, Execute (from Shell)
 bind F1 help main
 bind F2 insert main
 bind F3 writeout main
 bind F4 exit main 
 bind M-L linenumbers all
 bind M-3 comment main
-bind ^P up main
-bind ^D down main
-bind M-P pageup main
-bind M-D pagedown main
+bind M-M mark main
+bind M-P up main
+bind M-D down main
+bind ^P pageup main
+bind ^D pagedown main
 bind ^B execute main
-
 #bind M-D gotodir browser
-bind M-F whereis all
-bind M-W findnext all
-bind M-Q findprevious all
-bind M-R replace all
+
+# Find/Replace
+bind M-F whereis main
+bind M-W findnext main
+bind M-Q findprevious main
+bind M-R replace main
+
+# Record Keypresses (as macro)
+#bind M-: recordmacro main
+#bind M-; runmacro main
+
 # Copy/Cut/Paste
 bind M-C copy main
 bind M-X cut main
@@ -282,7 +290,9 @@ bind M-Y redo main
 #bind ^H chopwordleft main
 #bind ^H chopwordright main
 
+# Unbind these key-combinations
 unbind ^G main
 unbind ^K main
 unbind ^Q main
 unbind ^O main
+unbind M-A main
