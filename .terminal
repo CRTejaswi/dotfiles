@@ -5,7 +5,6 @@ Windows Terminal: https://aka.ms/terminal-documentation
   - Profile Settings: https://aka.ms/terminal-profile-settings
   - Color Schemes:    https://aka.ms/terminal-color-schemes
   - Key Bindings:     https://aka.ms/terminal-keybindings
-  - Selection:        https://aka.ms/terminal-selection
 */
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
@@ -92,10 +91,11 @@ Windows Terminal: https://aka.ms/terminal-documentation
     // To unbind a key combination from your defaults.json, set the command to "unbound".
     "actions":
     [
-        // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
-        // These two lines additionally bind them to Ctrl+C and Ctrl+V.
+        // Window: Close, Find, Copy/Paste
         { "command": "closeWindow", "keys": "alt+f4" },
         { "command": "find", "keys": "ctrl+f" },
+        { "command": {"action": "copy", "singleLine": false }, "keys": "ctrl+c" },
+        { "command": "paste", "keys": "ctrl+v" },
         // Current Tab: Close, Split, Focus on another split
         { "command": "closePane", "keys": "ctrl+w" },
         // { "command": "closeTab", "keys": "ctrl+w" },
@@ -105,9 +105,6 @@ Windows Terminal: https://aka.ms/terminal-documentation
         { "command": { "action": "moveFocus", "direction": "down" }, "keys": "alt+down" },
         { "command": { "action": "moveFocus", "direction": "left" }, "keys": "alt+left" },
         { "command": { "action": "moveFocus", "direction": "right" }, "keys": "alt+right" },
-        // Copy/Paste
-        { "command": {"action": "copy", "singleLine": false }, "keys": "ctrl+c" },
-        { "command": "paste", "keys": "ctrl+v" },
         // Font: Zoom In/Out
         { "command": { "action": "adjustFontSize", "delta": 1 }, "keys": "ctrl+=" },
         { "command": { "action": "adjustFontSize", "delta": -1 }, "keys": "ctrl+-" },
