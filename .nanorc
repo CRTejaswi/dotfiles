@@ -47,7 +47,7 @@ set autoindent
 
 ## Constantly display the cursor position in the status bar.  Note that
 ## this overrides "quickblank".
-set constantshow
+#set constantshow
 
 ## Use cut-from-cursor-to-end-of-line by default.
 # set cutfromcursor
@@ -256,20 +256,28 @@ include "C:/Users/Chaitanya Tejaswi/nanorc/*.nanorc"
 ## such as ^O for Open, ^F for Find, ^H for Help, and ^Q for Quit,
 ## then uncomment these:
 
-# Help, Comment/Uncomment, Up/Down, Execute (from Shell)
+# Help, Comment/Uncomment, Execute (from Shell)
 bind F1 help main
 bind F2 insert main
 bind F3 writeout main
 bind F4 exit main 
-bind M-L linenumbers all
+bind F5 linenumbers all
 bind M-3 comment main
-bind M-M mark main
-bind M-P up main
-bind M-D down main
-bind ^P pageup main
-bind ^D pagedown main
 bind ^B execute main
 #bind M-D gotodir browser
+
+# Up/Down, Left/Right
+bind M-M mark main
+bind M-J left main
+bind M-K right main
+bind ^J prevword main
+bind ^K nextword main
+bind M-U up main
+bind M-N down main
+bind ^U pageup main
+bind ^N pagedown main
+bind M-H home main
+bind M-L end main
 
 # Find/Replace
 bind M-F whereis main
@@ -285,6 +293,7 @@ bind M-R replace main
 bind M-C copy main
 bind M-X cut main
 bind M-V paste main
+#bind M-Del zap main
 bind M-Z undo main
 bind M-Y redo main
 #bind ^H chopwordleft main
