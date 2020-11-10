@@ -24,6 +24,15 @@ Install-Module ConsoleGuiTools
 Install-Module 
 Install-Module 
 
+<#
+PowerShell: Module Configuration
+- PSReadline
+# Use Up/Down keys to auto-complete from command history
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+- 
+#>
+
 # Install Common Software Binaries
 $vlc_url         = "https://mirror.downloadvn.com/videolan/vlc/last/win32/"
 $vlc             = "$vlc_url$((iwr $vlc_url).links.href -match '\.exe$')"
@@ -50,6 +59,7 @@ iwr $imagemagick -OutFile 'imagemagick.exe'
 # iwr $pandoc -OutFile 'pandoc.exe'
 iwr $miktex -OutFile 'miktex.exe'
 iwr $anydesk -OutFile 'anydesk.exe'
+
 
 
 <# Python: Install Packages

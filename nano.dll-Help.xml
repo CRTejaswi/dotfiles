@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?> <helpItems xmlns="http://msh" schema="maml">
+<command:command
+  xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
+nnnnnnnnnnnnn  xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
+  xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+  <command:details>
+    <command:name>nano</command:name>
+    <maml:description>
+    <maml:para>Minimal commandline editor.</maml:para>
+    </maml:description>
+  </command:details>
+  <maml:description>
+    <!--Add detailed description here-->
+  </maml:description>
+  <command:syntax>
+  </command:syntax>
+  <command:parameters>
+    <!--Add parameter information here-->
+  </command:parameters>
+  <command:inputTypes>
+    <!--Add input type information here-->
+  </command:inputTypes>
+  <command:returnValues>
+    <!--Add return value information here-->
+  </command:returnValues>
+  <maml:alertSet>
+    <!--Add Note information here-->
+  </maml:alertSet>
+  <command:examples>
+    <!--Add cmdlet examples here-->
+  </command:examples>
+  <maml:relatedLinks>
+    <maml:navigationLink>
+      <maml:linkText>Configuration (.nanorc):</maml:linkText>
+      <maml:uri>https://www.nano-editor.org/dist/latest/nano.html#Nanorc-Files</maml:uri>      </maml:navigationLink>
+  </maml:relatedLinks>
+</command:command>
