@@ -35,8 +35,8 @@ PSReadLine: Key-Bindings
   - Select: Backwards/Forwards
 #>
 
-Set-PSReadLineKeyHandler -Chord Alt+u -Function ScrollDisplayUpLine
-Set-PSReadLineKeyHandler -Chord Alt+n -Function ScrollDisplayDownLine
+Set-PSReadLineKeyHandler -Chord Alt+u -Function PreviousHistory
+Set-PSReadLineKeyHandler -Chord Alt+n -Function NextHistory
 Set-PSReadLineKeyHandler -Chord Ctrl+u -Function ScrollDisplayUp
 Set-PSReadLineKeyHandler -Chord Ctrl+n -Function ScrollDisplayDown
 
@@ -46,15 +46,14 @@ Set-PSReadLineKeyHandler -Chord Ctrl+j -Function BackwardWord
 Set-PSReadLineKeyHandler -Chord Ctrl+k -Function ForwardWord
 Set-PSReadLineKeyHandler -Chord Alt+h -Function BeginningOfLine
 Set-PSReadLineKeyHandler -Chord Alt+l -Function EndOfLine
-Set-PSReadLineKeyHandler -Chord Alt+u -Function ScrollDisplayUpLine
-Set-PSReadLineKeyHandler -Chord Alt+n -Function ScrollDisplayDownLine
 
 #Set-PSReadLineKeyHandler -Chord Alt+J -Function SelectBackwardChar
 #Set-PSReadLineKeyHandler -Chord Alt+K -Function SelectForwardChar
 Set-PSReadLineKeyHandler -Chord Ctrl+J -Function SelectBackwardWord
 Set-PSReadLineKeyHandler -Chord Ctrl+K -Function SelectForwardWord
-Set-PSReadLineKeyHandler -Chord Ctrl+H -Function SelectBackwardsLine
-Set-PSReadLineKeyHandler -Chord Ctrl+L -Function SelectLine
+Set-PSReadLineKeyHandler -Chord Ctrl+h -Function SelectBackwardsLine
+Set-PSReadLineKeyHandler -Chord Ctrl+l -Function SelectLine
+Set-PSReadLineKeyHandler -Chord Ctrl+L -Function ClearScreen
 
 # Install Common Software Binaries
 $vlc_url         = "https://mirror.downloadvn.com/videolan/vlc/last/win32/"
