@@ -35,25 +35,27 @@ PSReadLine: Key-Bindings
   - Select: Backwards/Forwards
 #>
 
-Set-PSReadLineKeyHandler -Chord Alt+u -Function PreviousHistory
-Set-PSReadLineKeyHandler -Chord Alt+n -Function NextHistory
-Set-PSReadLineKeyHandler -Chord Ctrl+u -Function ScrollDisplayUp
-Set-PSReadLineKeyHandler -Chord Ctrl+n -Function ScrollDisplayDown
+Set-PSReadLineOption -BellStyle None
+#Set-PSReadLineOption -EditMode Vi
+Set-PSReadLineOption -HistorySearchCursorMovesToEnd
 
-Set-PSReadLineKeyHandler -Chord Alt+j -Function BackwardChar
-Set-PSReadLineKeyHandler -Chord Alt+k -Function ForwardChar
-Set-PSReadLineKeyHandler -Chord Ctrl+j -Function BackwardWord
-Set-PSReadLineKeyHandler -Chord Ctrl+k -Function ForwardWord
-Set-PSReadLineKeyHandler -Chord Alt+h -Function BeginningOfLine
-Set-PSReadLineKeyHandler -Chord Alt+l -Function EndOfLine
+Set-PSReadLineKeyHandler -Chord Ctrl+l -Function ClearScreen
+Set-PSReadLineKeyHandler -Chord Alt+k -Function PreviousHistory
+Set-PSReadLineKeyHandler -Chord Alt+j -Function NextHistory
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 
-#Set-PSReadLineKeyHandler -Chord Alt+J -Function SelectBackwardChar
-#Set-PSReadLineKeyHandler -Chord Alt+K -Function SelectForwardChar
-Set-PSReadLineKeyHandler -Chord Ctrl+J -Function SelectBackwardWord
-Set-PSReadLineKeyHandler -Chord Ctrl+K -Function SelectForwardWord
-Set-PSReadLineKeyHandler -Chord Ctrl+h -Function SelectBackwardsLine
-Set-PSReadLineKeyHandler -Chord Ctrl+l -Function SelectLine
-Set-PSReadLineKeyHandler -Chord Ctrl+L -Function ClearScreen
+Set-PSReadLineKeyHandler -Chord Alt+h -Function BackwardChar
+Set-PSReadLineKeyHandler -Chord Alt+l -Function ForwardChar
+Set-PSReadLineKeyHandler -Chord Alt+b -Function BackwardWord
+Set-PSReadLineKeyHandler -Chord Alt+w -Function ForwardWord
+Set-PSReadLineKeyHandler -Chord Alt+^ -Function BeginningOfLine
+Set-PSReadLineKeyHandler -Chord Alt+$ -Function EndOfLine
+
+Set-PSReadLineKeyHandler -Chord Alt+B -Function SelectBackwardWord
+Set-PSReadLineKeyHandler -Chord Alt+W -Function SelectForwardWord
+Set-PSReadLineKeyHandler -Chord Ctrl+^ -Function SelectBackwardsLine
+Set-PSReadLineKeyHandler -Chord Ctrl+$ -Function SelectLine
 
 # Install Common Software Binaries
 $vlc_url         = "https://mirror.downloadvn.com/videolan/vlc/last/win32/"
