@@ -7,14 +7,126 @@ source $VIMRUNTIME/mswin.vim
 " Mouse behavior (the Windows way)
 behave mswin
 
+" Auto-Source .vimrc from project if `vim .` is issued
+set shell=C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe
+let mapleader = " "
+set exrc
+set guicursor=
+set encoding=utf-8
+set nohlsearch
 set noerrorbells
+set visualbell t_vb= 
 set number
-set nowrap
+set relativenumber
+set wrap linebreak
 set incsearch
 set smartindent
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
+set scrolloff=10
+set signcolumn=yes
+"set tab to spaces
+set shiftwidth=4 softtabstop=4 expandtab 
+set path+=**
+"set wildmenu
+" Disable backup/swapfiles
+set noswapfile
+set nobackup
+set undodir='~/vimfiles/undodir'
+set undofile
+set pastetoggle=<F3>
+"set dir='~/tmp'
+set nrformats-=octal "disable octal number notation
+" Display time on status-bar
+" https://vim.fandom.com/wiki/Display_date-and-time_on_status_line
+set ruler
+set rulerformat=%30(%{strftime('\[%a\ %d\-%m\-%Y\ %I:%M%p\]')}\ %p%%%)
+
+" Vim: Plugins
+call plug#begin('~/vimfiles/plugged')
+Plug 'vim-utils/vim-man'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'itchyny/lightline.vim'
+Plug 'mattn/emmet-vim'
+" Highlight text with color
+Plug 'gko/vim-coloresque'
+" Comment in all formats (gc)
+Plug 'tpope/vim-commentary' 
+Plug 'itchyny/screensaver.vim'
+Plug 'mattn/emmet-vim' 
+call plug#end()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Custom Plugin Settings 
+""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:user_emmet_mode='n'
+let g:user_emmet_leader_key=','
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Custom Key-Bindings
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Change Default Behaviour
+noremap <Leader>o o<ESC>
+noremap <Leader>O O<ESC>
+nnoremap <Leader>v normal!<C-v>
+" Scroll Up/Down A Page
+nnoremap <C-j> <PageDown>
+nnoremap <C-k> <PageUp>
+" Custom Commands
+" Write date
+nnoremap <Leader>d :r !Get-Date -Format 'dd-MM-yyyy (hh:mm tt)'<Esc>i
+" Open file in browser (firefox)
+nnoremap <Leader>f :!firefox %<Esc><Esc>
+" Write [c]lipboard: copyTo/copyFrom clipboard
+"nnoremap <Leader>y !Set-Clipboard .
+nnoremap <Leader>y "*yy 
+vnoremap <Leader>y "*yy 
+nnoremap <Leader>p "*p
+vnoremap <Leader>p "*p
+" Automatically closing braces
+inoremap '<TAB> ''<ESC>i
+inoremap '''<CR> '''<CR>'''<C-o>O
+inoremap ```<CR> ```<CR>```<C-o>O
+inoremap { {}<ESC>i
+inoremap [ []<ESC>i
+inoremap ( ()<ESC>i
+inoremap {<CR> {<CR>}<C-o>O
+inoremap [<CR> [<CR>]<C-o>O
+inoremap (<CR> (<CR>)<C-o>O
+inoremap br; <br><CR>
+" Save & Close
+nnoremap <F4> <ESC>:up<CR>:q<CR>
+nnoremap <F5> <ESC>:wa<CR>:qa<CR>
+" Move entire line up/down
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+
+" Customization for word-wrapping
+" https://vimtricks.com/p/word-wrapping/
+let s:wrapenabled = 0
+function! ToggleWrap()
+  set wrap linebreak nolist
+  if s:wrapenabled
+    unmap j
+    unmap k
+    unmap 0
+    unmap ^
+    unmap $
+    let s:wrapenabled = 0
+  else
+    nnoremap j gj
+    nnoremap k gk
+    nnoremap 0 g0
+    nnoremap ^ g^
+    nnoremap $ g$
+    vnoremap j gj
+    vnoremap k gk
+    vnoremap 0 g0
+    vnoremap ^ g^
+    vnoremap $ g$
+    let s:wrapenabled = 1
+  endif
+endfunction
+map <leader>w :call ToggleWrap()<CR>
 
 " Use the internal diff if available.
 " Otherwise use the special 'diffexpr' for Windows.
@@ -53,4 +165,5 @@ function MyDiff()
     let &shellxquote=l:shxq_sav
   endif
 endfunction
+
 
