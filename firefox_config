@@ -1,0 +1,18 @@
+browser.compactmode.show
+
+ 
+/*
+Firefox Configuration (about:config)
+system: 'C:/Program Files/Mozilla Firefox/mozilla.cfg'
+user  : '%APPDATA%\Mozilla\Firefox\Profiles\xxxxxxxx.default-release\user.js'
+
+compactmode
+*/
+
+// lockPref("browser.startup.homepage", "https://intranet.company.local");
+// defaultPref("browser.shell.checkDefaultBrowser", false);
+// pref("network.proxy.type", 1);
+// pref("network.proxy.http", "proxy.company.local");
+// pref("network.proxy.http_port", 8080);
+pref("browser.compactmode.show", 1);
+
