@@ -16,3 +16,42 @@ compactmode
 // pref("network.proxy.http_port", 8080);
 pref("browser.compactmode.show", 1);
 
+// startup
+browser.startup.homepage
+browser.startup.page
+browser.tabs.warnOnClose
+browser.sessionstore.resume_from_crash
+browser.shell.checkDefaultBrowser
+
+// privacy
+privacy.trackingprotection.enabled
+privacy.donottrackheader.enabled
+privacy.resistFingerprinting
+network.cookie.cookieBehavior
+security.ssl.require_safe_negotiation
+security.tls.version.min
+
+// devtools
+devtools.chrome.enabled
+devtools.debugger.remote-enabled
+devtools.toolbox.selectedTool
+
+// performance
+gfx.webrender.all
+layers.acceleration.force-enabled
+media.hardware-video-decoding.enabled
+dom.ipc.processCount
+
+// update/telemetry
+app.update.auto
+app.update.enabled
+toolkit.telemetry.enabled
+toolkit.telemetry.unified
+datareporting.healthreport.uploadEnabled
+
+// database
+
+// local/global file access
+
+// plugins
+
